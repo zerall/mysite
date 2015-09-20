@@ -17,7 +17,9 @@ use yii\helpers\Html;
                 <span class="label label-warning"><?= Html::encode($model->price) ?></span>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right" id = "servis">
-                    <?= Html::a('Купить', ['site/order-form'], ['class' => 'btn btn-success']) ?>
+
+                    <?= Html::a('Заказать', ['site/order-form'], ['class' => 'btn btn-success']) ?>
+
             </div>
         </div>
     </blockquote>
