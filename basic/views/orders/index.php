@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\Clients;
 use app\models\Event1;
+use app\models\User;
 use app\models\Services;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -16,12 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?php if(Yii::$app->user->identity->username==='admin'){ ?>
+        <?php if (Yii::$app->user->getIdentity()->role === User::ROLE_ADMIN){ ?>
 
         <?= Html::a('Создать Заказ', ['create'], ['class' => 'btn btn-success']) ?>
         <?php } ?>
     </p>
-    <?php if(Yii::$app->user->identity->username==='admin'){?>
+    <?php  if (Yii::$app->user->getIdentity()->role === User::ROLE_ADMIN) {?>
     <?=
         GridView::widget([
             'dataProvider' => $dataProvider,
@@ -57,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]);
     ?>
 <?php } ?>
-    <?php if( Yii::$app->user->identity->username==='demo'){?>
+    <?php  if (Yii::$app->user->getIdentity()->role === User::ORGANIZATOR){?>
         <?=
         GridView::widget([
             'dataProvider' => $dataProvider,

@@ -25,7 +25,7 @@ AppAsset::register($this);
 <br><br><br>
 <?php $this->beginBody() ?>
     <div class="wrap">
-        <?php if(Yii::$app->user->identity->username==='admin'){
+        <?php {
             NavBar::begin([
                 'brandLabel' => 'Панель управления',
                 'brandUrl' => Url::toRoute('admin/control-panel'),
@@ -64,7 +64,7 @@ AppAsset::register($this);
                     ['label' => 'Новости', 'url' => ['/site/news']],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                        ['label' => 'Logout (' . Yii::$app->user->identity->user_name . ')',
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],
@@ -72,92 +72,7 @@ AppAsset::register($this);
 
             NavBar::end();
         }
-        else if(Yii::$app->user->identity->username==='demo'){
-            NavBar::begin([
-                'brandLabel' => 'Панель управления',
-                'brandUrl' => Url::toRoute('admin/control-panel'),
-                'options' => [
-                    'class' => 'navbar-default navbar-fixed-top',
-                ],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-left'],
-                'items' => [
-                    [
-                        'label' => 'Сайт',
-                        'items' => [
-                            ['label' => 'Главная', 'url' => ['/site/index']],
-                            ['label' => 'Контакты', 'url' => ['/site/contact']],
-                            ['label' => 'Наши услуги', 'url' => ['/site/our-services']],
-                            ['label' => 'Оформить заказ', 'url' => ['/site/order-form']],
-                        ],
-                    ],
-                    [
-                        'label' => 'Люди',
-                        'items' => [
-                            ['label' => 'Клиенты', 'url' => ['/clients/index']],
-                            ['label' => 'Аниматоры', 'url' => ['/animators/index']],
-                            ['label' => 'Услуги аниматора', 'url' => ['/animservices/index']],
-                            ['label' => 'Мероприятия-Аниматоры', 'url' => ['/animevents/index']],
-                            ['label' => 'Мероприятия-Услуги', 'url' => ['/eventservices/index']],
-                        ],
-                    ],
-                    ['label' => 'Мероприятия', 'url' => ['/event1/index']],
-                    ['label' => 'Сервис', 'url' => ['/services/index']],
-                    ['label' => 'Оплаты', 'url' => ['/payment/index']],
-                    ['label' => 'Заказы', 'url' => ['/orders/index']],
-                    ['label' => 'Отчеты', 'url' => ['/eventreports/index']],
-                    ['label' => 'Новости', 'url' => ['/site/news']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
-            ]);
 
-            NavBar::end();
-        }
-        else if(Yii::$app->user->identity->username==='anim'){
-            NavBar::begin([
-                'brandLabel' => 'Панель управления',
-                'brandUrl' => Url::toRoute('admin/control-panel'),
-                'options' => [
-                    'class' => 'navbar-default navbar-fixed-top',
-                ],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-left'],
-                'items' => [
-                    [
-                        'label' => 'Сайт',
-                        'items' => [
-                            ['label' => 'Главная', 'url' => ['/site/index']],
-                            ['label' => 'Контакты', 'url' => ['/site/contact']],
-                            ['label' => 'Наши услуги', 'url' => ['/site/our-services']],
-                            ['label' => 'Оформить заказ', 'url' => ['/site/order-form']],
-                        ],
-                    ],
-                    [
-                        'label' => 'Люди',
-                        'items' => [
-                            ['label' => 'Клиенты', 'url' => ['/clients/index']],
-
-                        ],
-                    ],
-                    ['label' => 'Мероприятия', 'url' => ['/event1/index']],
-                    ['label' => 'Сервис', 'url' => ['/services/index']],
-                    ['label' => 'Новости', 'url' => ['/site/news']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
-            ]);
-
-            NavBar::end();
-        }
         ?>
         <!-- Menu -->
     <div class="container">

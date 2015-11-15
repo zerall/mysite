@@ -249,7 +249,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/2.jpg) no-repeat center top;
+	background: url(../img/9.jpg) no-repeat center top;
 	margin-top: 0px;
 	padding-top:120px;
 	text-align:center;
@@ -276,6 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding-bottom: 30px;
 	font-size: 90px;
 	font-weight: bold;
+	opacity: 0.5;
 	text-shadow: 3px 3px 2px #000;
 }
 
@@ -550,7 +551,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #contactwrap #border {
     margin-right: 0px; /* Отступ слева */
-    margin-left: 260px;
     padding-right: 0px; /* Расстояние от линии до текста */
     text-align: left;
 }
