@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\Organizators;
+use app\models\User;
 use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $model app\models\Event1 */
@@ -18,7 +19,7 @@ use yii\helpers\ArrayHelper;
         'Выпускной' => 'Выпускной', 'Новый год' => 'Новый год', 'Корпоративы' => 'Корпоративы']); ?>
 
     <?= $form->field($model, 'amountOfGuests')->textInput(['maxlength' => 10]) ?>
-    <?php if(Yii::$app->user->identity->username==='admin'){?>
+    <?php  if (Yii::$app->user->getIdentity()->role === User::ROLE_ADMIN){?>
     <?= $form->field($model, 'orgNumber')->dropDownList(Organizators::getOrgsList(),['prompt'=>'Выбрать организатора']) ?>
     <?php } ?>
     <?= $form->field($model, 'place')->textInput(['maxlength' => 30]) ?>

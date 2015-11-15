@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\User;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -14,11 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?php if(Yii::$app->user->identity->username==='admin' || Yii::$app->user->identity->username==='demo'){?>
+        <?php  if (Yii::$app->user->getIdentity()->role === User::ROLE_ADMIN  || Yii::$app->user->getIdentity()->role === User::ORGANIZATOR){?>
             <?= Html::a('Создать услугу', ['create'], ['class' => 'btn btn-success']) ?>
         <?php } ?>
     </p>
-    <?php if(Yii::$app->user->identity->username==='admin' || Yii::$app->user->identity->username==='demo'){?>
+    <?php  if (Yii::$app->user->getIdentity()->role === User::ROLE_ADMIN  || Yii::$app->user->getIdentity()->role === User::ORGANIZATOR){?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -37,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
     <?php } ?>
-    <?php if(Yii::$app->user->identity->username==='anim'){?>
+    <?php  if (Yii::$app->user->getIdentity()->role === User::ANIMATOR){?>
 
         <?= GridView::widget([
             'dataProvider' => $dataProvider,

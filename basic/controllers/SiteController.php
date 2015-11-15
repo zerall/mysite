@@ -135,8 +135,9 @@ class SiteController extends Controller
                 return $this->render('order_form', ['model' => $model, 'clientModel' => $clientModel, 'serviceModel' => $serviceModel]);
             }
             // делаем что-то полезное с $model ...
-             $this->render('entry-confirm');
-            return $this->redirect(Yii::app()->returnUrl);
+             return $this->render('entry-confirm');
+
+ 
         } else {
             // либо страница отображается первый раз, либо есть ошибка в данных
             return $this->render('order_form', ['model' => $model, 'clientModel' => $clientModel, 'serviceModel' => $serviceModel]);
@@ -187,5 +188,6 @@ class SiteController extends Controller
 
         return $this->render('photo');
     }
+
 
 }
