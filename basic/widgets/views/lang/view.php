@@ -7,15 +7,17 @@
  */
 use yii\helpers\Html;
 ?>
-<div id="lang">
- <span id="current-lang" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   <?= $current->local;?> <span class="show-more-lang">▼</span>
-</span>
-    <ul id="langs" class="dropdown-menu" aria-labelledby="dLabel">
+
+<div id="lang" class="dropdown">
+ <a id="current-lang dropdown-toggle" data-toggle="dropdown">
+   <?= $current->local;?> <span class="show-more-lang">▼</a>
+
+    <ul id="langs" class="dropdown-menu mydrob">
         <?php foreach ($langs as $lang):?>
             <li>
                 <?= Html::a($lang->local, '/'.$lang->url.Yii::$app->getRequest()->getLangUrl()) ?>
             </li>
         <?php endforeach;?>
     </ul>
+     </span>
 </div>

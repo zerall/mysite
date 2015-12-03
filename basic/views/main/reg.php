@@ -10,8 +10,9 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\RegForm */
 /* @var $form ActiveForm */
+$this->title = 'Регистрация';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="main-reg">
     <?php if(Yii::$app->session->hasFlash('success')){ ; ?>
         <div class="alert alert-success">
@@ -33,5 +34,5 @@ use yii\widgets\ActiveForm;
         <?= Html::submitButton('Регистрация', ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
-
+    </div>
 </div><!-- main-reg -->

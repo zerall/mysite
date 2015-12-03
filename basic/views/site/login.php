@@ -4,6 +4,8 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\LoginForm */
 /* @var $form ActiveForm */
+$this->title = 'Авторизация';
+$this->params['breadcrumbs'][] = $this->title
 ?>
 <div class="main-login">
 

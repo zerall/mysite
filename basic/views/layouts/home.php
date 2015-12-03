@@ -54,9 +54,8 @@ HomeAsset::register($this);
             <h1 class="logo"><a href="<?php echo Url::toRoute('/site/index'); ?>#home">CYRUS STUDIO</a></h1> <br>
             <i class="fa fa-times menu-close"></i>
             <a href="<?php echo Url::toRoute('/site/index'); ?>" class="smoothScroll"><?= Yii::t('app', 'Главная') ?></a>
-            <a href="#about" class="smoothScroll"><?= Yii::t('app', 'О нас') ?></a>
-            <a href="#portfolio" class="smoothScroll"><?= Yii::t('app', 'Портфолио') ?></a>
-            <a href="<?php echo Url::toRoute('/site/about'); ?>" class="smoothScroll"><?= Yii::t('app', 'Наши работы') ?></a>
+            <a href="<?php echo Url::toRoute('/site/index'); ?>#about" class="smoothScroll"><?= Yii::t('app', 'О нас') ?></a>
+            <a href="<?php echo Url::toRoute('/site/index'); ?>#portfolio" class="smoothScroll"><?= Yii::t('app', 'Портфолио') ?></a>
             <a href="<?php echo Url::toRoute('/site/news'); ?>" class="smoothScroll"><?= Yii::t('app', 'Новости') ?></a>
             <a href="<?php echo Url::toRoute('/site/our-services'); ?>" class="smoothScroll"><?= Yii::t('app', 'Услуги') ?></a>
             <a href="<?php echo Url::toRoute('/site/contact'); ?>" class="smoothScroll"><?= Yii::t('app', 'Контакты') ?></a>
@@ -96,13 +95,70 @@ HomeAsset::register($this);
 
     <section id="home" name="home"></section>
     <div id="headerwrap">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
 
-        <div class="container">
+            <ddiv class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="bg">
+                    <img class="first-slide img.bg" src="<?= Yii::getAlias('@web'); ?>/img/24.jpg" alt="First slide" >
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>CYRUS STUDIO</h1>
+                                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                                <br> <br> <p> <a class="smoothScroll" href="#about">НАЖМИ МЕНЯ</a> <span class="glyphicon glyphicon-chevron-down"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div class="bg">
+                    <img class="second-slide img.bg" src="<?= Yii::getAlias('@web'); ?>/img/25.jpg" alt="Second slide">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1>CYRUS STUDIO</h1>
+                                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                                <br> <br> <p> <a class="smoothScroll" href="#about">НАЖМИ МЕНЯ</a> <span class="glyphicon glyphicon-chevron-down"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="item">
+                    <div class="bg">
+                    <img class="third-slide img.bg" src="<?= Yii::getAlias('@web'); ?>/img/26.jpg" alt="Third slide">
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>CYRUS STUDIO</h1>
+                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                            <br> <br> <p> <a class="smoothScroll" href="#about">НАЖМИ МЕНЯ</a> <span class="glyphicon glyphicon-chevron-down"></span></p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+        <!--<div class="container">
             <div class="row">
                 <div class="la" align="center">
                     <h1 align="center"> CYRUS STUDIO</h1>
                 </div>
-            </div><!--/row -->
+            </div><!--/row
         </div><!--/container -->
     </div><!--/headerwrap -->
 <?php endif; ?>
@@ -126,7 +182,7 @@ HomeAsset::register($this);
                     <p><small><?= Yii::t('app', 'КОНТАКТНЫЕ&nbsp; ТЕЛЕФОНЫ') ?></small></p>
                     <p><small>тел.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+375 17 388 01 34 <br>тел/факс&nbsp;+375 17 388 01 35 <br> gsm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+375 29 381 43 81</small></p>
                 </div>
-                <div class="col-lg-6 col-md-6 col-xs-6">
+                <div class="col-lg-6 col-md-6 col-xs-6" id = "border1">
                     <p><small><?= Yii::t('app', 'ВРЕМЯ&nbsp; РАБОТЫ') ?></small></p>
                     <p> <small><?= Yii::t('app', 'Понедельник-пятница,') ?> 9.30 - 18.00<br/><?= Yii::t('app', 'Запись на встречу - по договоренности') ?> <br/><?= Yii::t('app', 'на время удобное для Клиента') ?> </small></p><br>
                     <p><small>E-MAIL</small></p>
@@ -140,6 +196,8 @@ HomeAsset::register($this);
             </div>
         </div><!-- /container -->
     </div>
+
+
         <script>
             $(function(){
                 $.stellar({

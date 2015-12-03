@@ -249,13 +249,11 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 #headerwrap {
-	background: url(../img/9.jpg) no-repeat center top;
 	margin-top: 0px;
-	padding-top:120px;
 	text-align:center;
-	background-attachment: relative;
+	background-attachment: scroll;
 	background-position: center center;
-	min-height: 700px;
+	min-height: 900px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -280,6 +278,22 @@ h1, h2, h3, h4, h5, h6 {
 	text-shadow: 3px 3px 2px #000;
 }
 
+#headerwrap .bg {
+    position:fixed;
+    top:0;
+    left:0;
+    min-width:100%;
+    min-height:100%;
+}
+.bg img {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    min-width:100%;
+    min-height:100%;
+}
 /* About Wrap & Conf */
 #aboutwrap {
 	margin-top: 80px;
@@ -550,7 +564,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #contactwrap #border {
-    margin-right: 0px; /* Отступ слева */
+    padding-left: 150px; /* Отступ слева */
+    padding-right: 0px; /* Расстояние от линии до текста */
+    text-align: left;
+}
+
+#contactwrap #border1 {
+    padding-left: 150px; /* Отступ слева */
     padding-right: 0px; /* Расстояние от линии до текста */
     text-align: left;
 }
@@ -686,4 +706,13 @@ blockquote{
 #g{
     border-top: 1px solid black;
     padding: 30px 5px 0px 5px;
+}
+
+.carousel-caption{
+    margin: 250px auto;
+    color: #ffffff;
+}
+.carousel-caption a{
+    color: #ffffff;
+    text-decoration: none;
 }
